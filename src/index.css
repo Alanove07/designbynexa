@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family:Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-gray-900 font-sans antialiased;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-700;
+}
+
+/* Gradient Text */
+.gradient-text {
+  @apply bg-gradient-to-r from-primary-600 via-primary-500 to-blue-600 bg-clip-text text-transparent;
+}
+
+/* Glass morphism effect - Updated for white theme */
+.glass {
+  @apply bg-white/90 backdrop-blur-md border border-gray-200;
+}
+
+/* Card hover effect */
+.card-hover {
+  @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-white border border-gray-300 hover:border-primary-600 text-gray-900 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg;
+}
