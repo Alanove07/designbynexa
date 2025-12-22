@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Complete - Nexa Designs</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+    .header {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 2px solid #10b981;
+    }
+    .logo-img {
+      max-width: 120px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+    .tagline {
+      margin: 10px 0 0 0;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    .content {
+      padding: 40px 20px;
+    }
+    .success-message {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+      border: 2px solid #10b981;
+      border-radius: 8px;
+      padding: 25px;
+      text-align: center;
+      margin: 25px 0;
+    }
+    .success-icon {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+    .success-title {
+      font-size: 22px;
+      color: #10b981;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+    .success-subtitle {
+      font-size: 16px;
+      color: #cbd5e1;
+      margin: 5px 0;
+    }
+    .text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #cbd5e1;
+      margin: 15px 0;
+    }
+    .delivery-section {
+      background-color: #1e293b;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 25px 0;
+      border-left: 4px solid #10b981;
+    }
+    .delivery-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #334155;
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+    }
+    .delivery-item:last-child {
+      border-bottom: none;
+    }
+    .delivery-label {
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+    .delivery-value {
+      color: #cbd5e1;
+    }
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      padding: 14px 32px;
+      text-decoration: none;
+      border-radius: 6px;
+      margin: 25px 0;
+      font-weight: 600;
+    }
+    .footer {
+      background-color: #1e293b;
+      padding: 30px 20px;
+      text-align: center;
+      border-top: 1px solid #334155;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .copyright {
+      margin: 0;
+      color: #64748b;
+    }
+    .copyright a {
+      color: #10b981;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+      <img src="https://nexastudio.site/Nexa-Logo-Transparent(svg).svg" alt="Nexa Designs" class="logo-img">
+      <p class="tagline">Creative Design Studio</p>
+    </div>
+
+    <div class="content">
+      <div class="success-message">
+        <div class="success-icon">🎉</div>
+        <div class="success-title">Your Project is Ready!</div>
+        <div class="success-subtitle">It's been a pleasure working with you</div>
+      </div>
+      
+      <p class="text">
+        Hi <strong>{CLIENT_NAME}</strong>,
+      </p>
+
+      <p class="text">
+        Exciting news! Your project <strong>"{PROJECT_TITLE}"</strong> is now complete and ready for delivery. We're thrilled with the final result and hope you are too!
+      </p>
+
+      <div class="delivery-section">
+        <div class="delivery-item">
+          <span class="delivery-label">Project Name:</span>
+          <span class="delivery-value">{PROJECT_TITLE}</span>
+        </div>
+        <div class="delivery-item">
+          <span class="delivery-label">Delivery Date:</span>
+          <span class="delivery-value">{DELIVERY_DATE}</span>
+        </div>
+        <div class="delivery-item">
+          <span class="delivery-label">File Formats:</span>
+          <span class="delivery-value">{FILE_FORMATS}</span>
+        </div>
+        <div class="delivery-item">
+          <span class="delivery-label">Access:</span>
+          <span class="delivery-value">{ACCESS_METHOD}</span>
+        </div>
+      </div>
+
+      <center>
+        <a href="{DOWNLOAD_LINK}" class="cta-button">Download Your Files</a>
+      </center>
+
+      <p class="text">
+        All your final deliverables are ready for download. They've been optimized for both digital and print use, depending on your project needs.
+      </p>
+
+      <p class="text">
+        If you need any revisions, have questions about the files, or need them in a different format, please don't hesitate to reach out. We're here to help!
+      </p>
+
+      <p class="text">
+        <strong>What's Next?</strong><br>
+        We'd love to hear your feedback and would greatly appreciate a testimonial or review. Also, if you have any future design needs, we're always excited to collaborate again!
+      </p>
+    </div>
+
+    <div class="footer">
+      <p class="copyright">
+        © 2025 Nexa Designs. All rights reserved.<br>
+        <a href="https://DesignbyNexa/#/">Visit our website</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

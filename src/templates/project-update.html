@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Update - Nexa Designs</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+    .header {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 2px solid #f59e0b;
+    }
+    .logo-img {
+      max-width: 120px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+    .tagline {
+      margin: 10px 0 0 0;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    .content {
+      padding: 40px 20px;
+    }
+    .greeting {
+      font-size: 18px;
+      color: #f1f5f9;
+      margin: 0 0 20px 0;
+      font-weight: 600;
+    }
+    .text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #cbd5e1;
+      margin: 15px 0;
+    }
+    .update-box {
+      background-color: #1e293b;
+      padding: 25px;
+      border-radius: 8px;
+      margin: 25px 0;
+      border-left: 4px solid #f59e0b;
+    }
+    .update-label {
+      font-size: 12px;
+      color: #f59e0b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .update-content {
+      font-size: 15px;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+    .progress-bar {
+      background-color: #334155;
+      height: 8px;
+      border-radius: 4px;
+      margin: 20px 0;
+      overflow: hidden;
+    }
+    .progress-fill {
+      background: linear-gradient(90deg, #f59e0b 0%, #f97316 100%);
+      height: 100%;
+      border-radius: 4px;
+      width: 65%;
+    }
+    .progress-text {
+      font-size: 14px;
+      color: #94a3b8;
+      margin: 5px 0;
+    }
+    .footer {
+      background-color: #1e293b;
+      padding: 30px 20px;
+      text-align: center;
+      border-top: 1px solid #334155;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .copyright {
+      margin: 0;
+      color: #64748b;
+    }
+    .copyright a {
+      color: #f59e0b;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+      <img src="https://nexastudio.site/Nexa-Logo-Transparent(svg).svg" alt="Nexa Designs" class="logo-img">
+      <p class="tagline">Creative Design Studio</p>
+    </div>
+
+    <div class="content">
+      <h2 class="greeting">📊 Progress Update: <strong>{PROJECT_TITLE}</strong></h2>
+      
+      <p class="text">
+        Hi <strong>{CLIENT_NAME}</strong>,
+      </p>
+
+      <p class="text">
+        We wanted to keep you in the loop! Here's an update on your project:
+      </p>
+
+      <div class="update-box">
+        <div class="update-label">Latest Update</div>
+        <div class="update-content">
+          {UPDATE_MESSAGE}
+        </div>
+      </div>
+
+      <p class="text" style="margin: 20px 0;">
+        <strong>Project Progress</strong>
+      </p>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+      <p class="progress-text">65% Complete</p>
+
+      <p class="text">
+        Your project is progressing well, and we're excited about the direction it's heading. We'll continue to keep you updated as we move closer to completion.
+      </p>
+
+      <p class="text">
+        If you have any feedback or questions, don't hesitate to reach out. We're here to ensure you're completely satisfied with the final result.
+      </p>
+    </div>
+
+    <div class="footer">
+      <p class="copyright">
+        © 2025 Nexa Designs. All rights reserved.<br>
+        <a href="https://DesignbyNexa/#/">Visit our website</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

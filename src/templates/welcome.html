@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Nexa Studio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      overflow: hidden;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #1a4d6d 0%, #0f2d42 100%);
+      color: white;
+      padding: 60px 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      font-size: 16px;
+      opacity: 0.95;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 5px;
+    }
+    
+    /* Welcome Section */
+    .welcome-section {
+      background: linear-gradient(135deg, #f0fdf9 0%, #ecfdf5 100%);
+      padding: 40px 30px;
+      border-bottom: 3px solid #2dd4bf;
+    }
+    
+    .welcome-section h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #0f2d42;
+      margin-bottom: 15px;
+    }
+    
+    .welcome-section p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 12px;
+    }
+    
+    /* Main Content */
+    .content {
+      padding: 40px 30px;
+    }
+    
+    /* Featured Image */
+    .featured-section {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .featured-section img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(45, 212, 191, 0.15);
+      margin-bottom: 20px;
+    }
+    
+    .featured-section h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0f2d42;
+      margin-bottom: 10px;
+    }
+    
+    .featured-section p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+    }
+    
+    /* Service Items */
+    .services-container {
+      margin: 40px 0;
+    }
+    
+    .services-container h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f2d42;
+      margin-bottom: 30px;
+      text-align: center;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .services-container h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #2dd4bf, #06b6d4);
+      border-radius: 2px;
+    }
+    
+    .service-items {
+      display: grid;
+      gap: 20px;
+    }
+    
+    .service-item {
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .service-item:hover {
+      border-color: #2dd4bf;
+      box-shadow: 0 8px 20px rgba(45, 212, 191, 0.15);
+      transform: translateY(-3px);
+    }
+    
+    .service-label {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0f2d42;
+      margin-bottom: 8px;
+    }
+    
+    .service-item p {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.6;
+    }
+    
+    /* Why Choose Section */
+    .why-choose {
+      background: linear-gradient(135deg, #f0fdf9 0%, #ecfdf5 100%);
+      border: 2px solid #2dd4bf;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 40px 0;
+    }
+    
+    .why-choose h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f2d42;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .why-item {
+      margin-bottom: 18px;
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 15px;
+      align-items: start;
+    }
+    
+    .why-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .why-icon {
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, #2dd4bf, #06b6d4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    
+    .why-content h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f2d42;
+      margin-bottom: 4px;
+    }
+    
+    .why-content p {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    /* Stats */
+    .stats-section {
+      background: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      padding: 30px;
+      margin: 40px 0;
+      border-radius: 15px;
+      border: 2px solid #e5e7eb;
+      text-align: center;
+    }
+    
+    .stat h3 {
+      font-size: 32px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #2dd4bf, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 6px;
+    }
+    
+    .stat p {
+      font-size: 12px;
+      font-weight: 700;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, #0f2d42 0%, #1a4d6d 100%);
+      color: white;
+      padding: 40px 30px;
+      text-align: center;
+      border-radius: 15px;
+      margin: 40px 0;
+    }
+    
+    .cta-section h3 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    
+    .cta-section p {
+      font-size: 14px;
+      opacity: 0.95;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    
+    .btn {
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13px;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #2dd4bf, #06b6d4);
+      color: white;
+      box-shadow: 0 4px 12px rgba(45, 212, 191, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(45, 212, 191, 0.4);
+    }
+    
+    .btn-secondary {
+      background: white;
+      color: #0f2d42;
+      border: 2px solid white;
+    }
+    
+    .btn-secondary:hover {
+      background: #f0fdf9;
+    }
+    
+    /* Testimonial */
+    .testimonial {
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 15px;
+      padding: 25px;
+      margin: 35px 0;
+      text-align: center;
+    }
+    
+    .testimonial p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+      font-style: italic;
+      line-height: 1.8;
+    }
+    
+    .testimonial-author {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f2d42;
+    }
+    
+    .stars {
+      color: #2dd4bf;
+      margin-bottom: 10px;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+    
+    /* Footer */
+    .footer {
+      background: #0f2d42;
+      color: white;
+      padding: 40px 30px;
+      text-align: center;
+    }
+    
+    .footer-logo {
+      width: 60px;
+      height: auto;
+      margin: 0 auto 20px;
+      display: block;
+      opacity: 0.9;
+    }
+    
+    .footer h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .footer-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+    
+    .footer-btn {
+      background: transparent;
+      border: 1px solid #2dd4bf;
+      color: #2dd4bf;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-btn:hover {
+      background: #2dd4bf;
+      color: #0f2d42;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(45, 212, 191, 0.3);
+    }
+    
+    .social-links a {
+      color: #2dd4bf;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      width: 36px;
+      height: 36px;
+      border: 1px solid #2dd4bf;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background: #2dd4bf;
+      color: #0f2d42;
+    }
+    
+    .copyright {
+      font-size: 11px;
+      color: #999;
+      margin-top: 15px;
+    }
+    
+    .copyright a {
+      color: #2dd4bf;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1>Nexa Studio</h1>
+      <p>Your Creative Partner</p>
+    </div>
+    
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+      <h2>Welcome, {RECIPIENT_NAME}</h2>
+      <p>We're thrilled to have you on board. At Nexa Studio, we transform your creative vision into stunning visual designs that captivate, inspire, and drive results.</p>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="content">
+      
+      <!-- Featured Image -->
+      <div class="featured-section">
+        <img src="https://alanove.me/nexastudio/icons/3d-casual-life-graphic-design-software-on-laptop.png" alt="Design Work">
+        <h3>Professional Design Solutions</h3>
+        <p>From branding to digital design, we create visuals that elevate your brand and engage your audience.</p>
+      </div>
+      
+      <!-- Services -->
+      <div class="services-container">
+        <h2>Our Services</h2>
+        <div class="service-items">
+          <div class="service-item">
+            <div class="service-label">Branding & Identity</div>
+            <p>Logo design, brand guidelines, and complete identity systems</p>
+          </div>
+          <div class="service-item">
+            <div class="service-label">Digital Design</div>
+            <p>Web design, UI/UX, and interactive digital experiences</p>
+          </div>
+          <div class="service-item">
+            <div class="service-label">Illustration & Art</div>
+            <p>Custom illustrations and digital artwork for your projects</p>
+          </div>
+          <div class="service-item">
+            <div class="service-label">Marketing Design</div>
+            <p>Social media content, posters, and promotional materials</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Why Choose Us -->
+      <div class="why-choose">
+        <h3>Why Nexa Studio</h3>
+        <div class="why-item">
+          <div class="why-icon">1</div>
+          <div class="why-content">
+            <h4>Expert Team</h4>
+            <p>Professional designers with years of experience in creating stunning visuals</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">2</div>
+          <div class="why-content">
+            <h4>Fast Delivery</h4>
+            <p>Quick turnaround times without compromising on quality</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">3</div>
+          <div class="why-content">
+            <h4>Custom Solutions</h4>
+            <p>Tailored designs that perfectly match your brand and goals</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">4</div>
+          <div class="why-content">
+            <h4>Full Support</h4>
+            <p>Unlimited revisions and support throughout your project</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Stats -->
+      <div class="stats-section">
+        <div class="stat">
+          <h3>50+</h3>
+          <p>Projects</p>
+        </div>
+        <div class="stat">
+          <h3>30+</h3>
+          <p>Clients</p>
+        </div>
+        <div class="stat">
+          <h3>5+</h3>
+          <p>Years</p>
+        </div>
+      </div>
+      
+      <!-- Testimonial -->
+      <div class="testimonial">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p>"Nexa Studio transformed our brand with exceptional design work. Their attention to detail and creative approach exceeded our expectations."</p>
+        <div class="testimonial-author">Sarah Martinez - Brand Manager</div>
+      </div>
+      
+      <!-- CTA Section -->
+      <div class="cta-section">
+        <h3>Ready to Get Started?</h3>
+        <p>Let's discuss your project and create something amazing together</p>
+        <div class="buttons">
+          <a href="https://DesignbyNexa/#/" class="btn btn-primary">View Portfolio</a>
+          <a href="https://DesignbyNexa/#/contact" class="btn btn-secondary">Contact Us</a>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+      <img src="https://nexastudio.site/Nexa-Logo-Transparent(svg).svg" alt="Nexa" class="footer-logo">
+      <h3>Let's Create Together</h3>
+      <div class="footer-buttons">
+        <a href="https://DesignbyNexa/#/" class="footer-btn">Portfolio</a>
+        <a href="https://DesignbyNexa/#/contact" class="footer-btn">Contact</a>
+      </div>
+      <div class="social-links">
+        <a href="https://instagram.com" title="Instagram">in</a>
+        <a href="https://twitter.com" title="Twitter">tw</a>
+        <a href="https://linkedin.com" title="LinkedIn">li</a>
+      </div>
+      <p class="copyright">
+        © 2025 Nexa Studio. All rights reserved.<br>
+        <a href="https://DesignbyNexa/#/">Website</a> • <a href="https://alanove.me/nexastudio/">Portfolio</a>
+      </p>
+    </div>
+    
+  </div>
+</body>
+</html>
